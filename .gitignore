@@ -1,4 +1,3 @@
-
 ###> symfony/framework-bundle ###
 /.env.local
 /.env.local.php
@@ -21,4 +20,5 @@
 
 ###> lifehub/custom ###
 /docker/.database
+.idea
 ###< lifehub/custom ###
