@@ -16,5 +16,29 @@ services:
     App\:
         resource: '../src/'
 
+    # App core (ModuleManager, Interfaces, Helpers...)
+    LifeHub\Core\:
+        resource: '../core/'
+
+    # App modules (Habits, Notifications...)
+    LifeHub\Modules\:
+        resource: '../modules/'
+
+    # -----------------------------------------------------------
+    # MODULE ARCHITECTURE DISCOVERY (Core Feature)
+    # Custom tag applied to every class that implements this interface (used for the modules declarations)
+    # -----------------------------------------------------------
+    _instanceof:
+        LifeHub\Core\Interface\LifeHubModuleInterface:
+            tags: ['lifehub.module'] # All module classes (e.g., HabitsModule) are now marked with this tag.
+
+    # ModuleManager Definition and Tagged Injection (The Orchestrator)
+    LifeHub\Core\Service\ModuleManager:
+        # Inject an Iterator (collection) of ALL services marked with the 'lifehub.module' tag.
+        # This is the core mechanism for finding all modules without knowing their names (Decoupling).
+        # !tagged_iterator ensures Lazy Loading performance: services are only instantiated when iterated.
+        arguments:
+            $modules: !tagged_iterator lifehub.module
+
     # add more service definitions when explicit configuration is needed
     # please note that last definitions always *replace* previous ones

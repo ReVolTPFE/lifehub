@@ -6,7 +6,6 @@ use LifeHub\Core\Interface\LifeHubModuleInterface;
 
 final class HabitsModule implements LifeHubModuleInterface
 {
-
     public static function getName(): string
     {
         return "Suivi des habitudes";
