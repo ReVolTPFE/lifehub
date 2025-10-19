@@ -62,5 +62,6 @@ RUN useradd container -u 1000 -m
 
 RUN echo 'alias sc="php bin/console"' >> /home/container/.bashrc
 RUN echo 'alias test:unit="export XDEBUG_MODE=coverage && rm -rf var && php vendor/bin/phpunit --path-coverage"' >> /home/container/.bashrc
+RUN echo 'alias watch="php bin/console tailwind:build --watch"' >> /home/container/.bashrc
 
 WORKDIR /var/www/html

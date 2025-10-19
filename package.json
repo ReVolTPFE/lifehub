@@ -1,0 +1,7 @@
+{
+    "name": "lifehub",
+    "description": "This file is there to have Tailwind autocompletion on JetBrains IDEs but AssetMapper is used.",
+    "devDependencies": {
+        "tailwindcss": "^3.4.17"
+    }
+}

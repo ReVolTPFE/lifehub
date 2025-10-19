@@ -21,4 +21,5 @@
 ###> lifehub/custom ###
 /docker/.database
 .idea
+node_modules
 ###< lifehub/custom ###
