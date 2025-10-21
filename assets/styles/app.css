@@ -1,3 +1,26 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+/* For dev mode */
+.sf-toolbar {
+    position: absolute;
+}
+
+
+.top-bot-gradient {
+    @apply bg-gradient-to-b from-emerald-500 to-teal-700;
+}
+
+.panel {
+    @apply p-3 bg-white border border-gray-300 rounded-lg shadow-sm;
+}
+
+ul#main-navigation li {
+    @apply my-1 p-2 text-white cursor-pointer duration-300;
+
+    &:hover {
+        @apply rounded-lg;
+        background-color: #ffffff1a;
+    }
+}
