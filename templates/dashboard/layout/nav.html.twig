@@ -5,11 +5,16 @@
         </a>
     </div>
 
-    <ul id="main-navigation" class="mt-4">
-        <li><a href="#">Test</a></li>
-        <li><a href="#">Test</a></li>
-        <li><a href="#">Test</a></li>
-        <li><a href="#">Test</a></li>
-        <li><a href="#">Test</a></li>
+    <p class="navigation-category">Modules</p>
+    <ul class="main-navigation" class="mt-4">
+        {% for module in activeModules %}
+            <li><a href="{{ path(module.defaultRoute) }}"><i class="{{ module.icon }}"></i><span class="ps-3">{{ module.name }}</span></a></li>
+        {% endfor %}
+    </ul>
+
+    <p class="navigation-category">Settings</p>
+    <ul class="main-navigation" class="mt-4">
+        <li><a href="#">Core</a></li>
+        <li><a href="#">Modules</a></li>
     </ul>
 </nav>

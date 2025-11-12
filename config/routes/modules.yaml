@@ -1,0 +1,4 @@
+habits_module:
+    resource: ../../modules/Habits/Controller/
+    type: attribute
+    prefix: /modules/habits
