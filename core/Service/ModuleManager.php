@@ -30,4 +30,9 @@ final class ModuleManager
     {
         return $this->modules;
     }
+
+    public function getActiveModules(): array
+    {
+        return $this->modules;
+    }
 }

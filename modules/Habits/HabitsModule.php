@@ -6,6 +6,8 @@ use LifeHub\Core\Interface\LifeHubModuleInterface;
 
 final class HabitsModule implements LifeHubModuleInterface
 {
+    public const SLUG = 'habits';
+
     public static function getName(): string
     {
         return "Suivi des habitudes";
@@ -13,7 +15,12 @@ final class HabitsModule implements LifeHubModuleInterface
 
     public static function getSlug(): string
     {
-        return "habits";
+        return self::SLUG;
+    }
+
+    public static function getDefaultRoute(): string
+    {
+        return 'app_modules_'.self::SLUG.'_index';
     }
 
     public static function getDescription(): string
