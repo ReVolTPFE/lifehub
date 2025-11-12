@@ -16,7 +16,11 @@
     @apply p-3 bg-white border border-gray-300 rounded-lg shadow-sm;
 }
 
-ul#main-navigation li {
+p.navigation-category {
+    @apply mt-10 text-white font-light uppercase;
+}
+
+ul.main-navigation li {
     @apply my-1 p-2 text-white cursor-pointer duration-300;
 
     &:hover {
