@@ -5,15 +5,17 @@
         </a>
     </div>
 
-    <p class="navigation-category">Modules</p>
-    <ul class="main-navigation" class="mt-4">
-        {% for module in activeModules %}
-            <li><a href="{{ path(module.defaultRoute) }}"><i class="{{ module.icon }}"></i><span class="ps-3">{{ module.name }}</span></a></li>
-        {% endfor %}
-    </ul>
+    {% if activeModules is not empty %}
+        <p class="navigation-category">Modules</p>
+        <ul class="main-navigation mt-2">
+            {% for module in activeModules %}
+                <li><a href="{{ path(module.defaultRoute) }}"><i class="{{ module.icon }}"></i><span class="ps-3">{{ module.name }}</span></a></li>
+            {% endfor %}
+        </ul>
+    {% endif %}
 
     <p class="navigation-category">Settings</p>
-    <ul class="main-navigation" class="mt-4">
+    <ul class="main-navigation mt-2">
         <li><a href="#">Core</a></li>
         <li><a href="#">Modules</a></li>
     </ul>

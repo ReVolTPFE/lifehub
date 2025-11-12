@@ -3,6 +3,7 @@
 namespace LifeHub\Core\Service;
 
 use LifeHub\Core\Interface\LifeHubModuleInterface;
+use Symfony\Component\Security\Core\User\UserInterface;
 
 /**
  * The central service responsible for discovering, listing, and managing all LifeHub modules.
@@ -31,8 +32,12 @@ final class ModuleManager
         return $this->modules;
     }
 
-    public function getActiveModules(): array
+    public function getActiveModulesForUser(UserInterface $user): array
     {
-        return $this->modules;
+        $activesModules = $user->getActiveModules();
+
+        return array_filter($this->modules, function (LifeHubModuleInterface $module) use ($activesModules) {
+            return in_array($module::getSlug(), $activesModules, true);
+        });
     }
 }
